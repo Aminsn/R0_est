@@ -41,13 +41,13 @@ ui <- fluidPage(theme = shinytheme("sandstone"),
                            tabPanel("Map",
                                     
                                     mainPanel(
+                                      tags$style(type = "text/css", "#map {height: calc(100vh - 80px) !important;}"),
                                       
                                       dateInput("date_end",
                                                 label = "End of two week period to estimate R:",
                                                 max(latest$date)),
                                       
                                       p("Click on the map to see the country-specific estimated R confidence intervals."),
-                                      
                                       leafletOutput("view") %>% withSpinner(color="#a52a2a"),
                                       
                                       width = 12)),#End of Map tabpanel
